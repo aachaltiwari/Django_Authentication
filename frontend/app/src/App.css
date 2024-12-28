@@ -1,0 +1,29 @@
+/* Menu container */
+.menu {
+  margin: 10px 20px; /* Adds some spacing around the button */
+}
+
+/* Home button styling */
+.home-button {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(167, 147, 223); /* Gray-filled button */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Hover effect */
+.home-button:hover {
+  background-color: rgb(23, 240, 63); /* Slightly darker gray on hover */
+  transform: scale(1.05);
+}
+
+/* Active effect */
+.home-button:active {
+  background-color: rgb(199, 249, 20); /* Even darker gray when clicked */
+  transform: scale(0.95);
+}

@@ -111,7 +111,7 @@ class FactorialView(CreateAPIView):
         n = request.data.get('n')
         try:
             result = factorial(n)
-            return Response({'result': result}, status=status.HTTP_200_OK)
+            return Response({'result': str(result)}, status=status.HTTP_200_OK)
         except Exception as e:
             # Handle all other unexpected exceptions
             return Response(

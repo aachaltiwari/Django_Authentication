@@ -1,0 +1,39 @@
+.userdetails-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userdetails-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .userdetails-container p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .userdetails-container button {
+    padding: 0.8rem;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .userdetails-container button:hover {
+    background-color: #c82333;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app_name',
     'rest_framework',
     'djoser',
+    'corsheaders',
     ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'project_name.urls'
@@ -154,3 +156,11 @@ DJOSER = {
         'user': 'app_name.serializers.UserSer',
     }
 }
+
+#####################################################################
+
+# CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
