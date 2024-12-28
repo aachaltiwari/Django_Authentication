@@ -2,11 +2,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Book
-from .serializers import BookSerializer
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import BookSerializer, FactorialSerializer
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 from rest_framework.exceptions import PermissionDenied
+from .logic import factorial
 
 # Create your views here.
 # class BookView(APIView):
@@ -101,3 +102,19 @@ class BookDetailView(RetrieveUpdateDestroyAPIView):
             {"detail": "Book deleted successfully."},
             status=status.HTTP_204_NO_CONTENT
         )
+        
+        
+
+class FactorialView(CreateAPIView):
+    serializer_class = FactorialSerializer
+    def post(self, request):
+        n = request.data.get('n')
+        try:
+            result = factorial(n)
+            return Response({'result': result}, status=status.HTTP_200_OK)
+        except Exception as e:
+            # Handle all other unexpected exceptions
+            return Response(
+                {'error': 'An unexpected error occurred: ' + str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

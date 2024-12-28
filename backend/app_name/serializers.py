@@ -24,3 +24,6 @@ class BookSerializer(serializers.ModelSerializer):
     def get_start_vowel(self, obj):
         vowels = 'AEIOUaeiou'
         return obj.title[0] in vowels if obj.title else False
+    
+class FactorialSerializer(serializers.Serializer):
+    n = serializers.IntegerField(min_value=0, required=True)
